@@ -9,7 +9,7 @@ metadata:
     github.com/project-slug: sahil-gulati/backstage-demo
     opsgenie.com/component-selector: 'tag:"component:test"'
     backstage.io/techdocs-ref: url:https://github.com/Sahil-Gulati/backstage-demo/tree/main/
-    sentry.io/project-slug: testing-sentry-0
+    sentry.io/project-slug: testing-sentry-05
 spec:
   type: service
   lifecycle: production
