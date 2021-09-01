@@ -20,4 +20,8 @@ jobs:
     - run:
         name: "Hello World"
         command: echo "Helllo"
+    - run:
+        name: "Ready to fail"
+        command: failure
+
 
