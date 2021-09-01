@@ -11,4 +11,13 @@ workflows:
     # Run the welcome/run job in its own container
     jobs:
       - welcome/run
-      - testing/failure
+      - build
+jobs:
+  build:
+    docker: 
+      - image: alpine
+    steps:
+    - run:
+        name: "Hello World"
+        command: echo "Helllo"
+
