@@ -22,6 +22,18 @@ spec:
           ui:autofocus: true
           ui:options:
             rows: 5
+    - title: Name of the component
+      required:
+        - component
+      properties:
+        name:
+          title: Component
+          type: string
+          description: Unique name of the component
+          ui:autofocus: true
+          ui:options:
+            rows: 5
+            
     - title: Choose a location
       required:
         - repoUrl
