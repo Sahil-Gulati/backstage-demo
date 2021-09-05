@@ -1,4 +1,5 @@
 #!/bin/bash
 
 echo "Hello World";
-echo "{{ parameters.name }}"
+echo "parametes.name ${{ parameters.name }} "
+echo "values.name ${{ values.name }}"
