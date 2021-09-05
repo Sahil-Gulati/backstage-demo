@@ -57,6 +57,7 @@ spec:
         url: ./template
         values:
           name: '{{ parameters.name }}'
+          component: '{{ parameters.component }}'
     - id: publish
       name: Publish
       action: publish:github
