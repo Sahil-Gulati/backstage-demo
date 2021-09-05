@@ -1,1 +1,1 @@
-echo "Component name is {{parameters.component}}"
+echo "Component name is ${{ parameters.component }}"
