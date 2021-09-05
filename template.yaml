@@ -11,6 +11,7 @@ spec:
 
   # these are the steps which are rendered in the frontend with the form input
   parameters:
+  
     - title: Fill in some steps
       required:
         - name
@@ -22,11 +23,12 @@ spec:
           ui:autofocus: true
           ui:options:
             rows: 5
+            
     - title: Name of the component
       required:
         - component
       properties:
-        name:
+        component:
           title: Component
           type: string
           description: Unique name of the component
