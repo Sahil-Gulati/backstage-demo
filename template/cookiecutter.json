@@ -1,3 +1,6 @@
 {
-   "snake_case": "{{ cookiecutter.service_name|replace('-', '_') }}"
+   "snake_case": "{{ cookiecutter.service_name|replace('-', '_') }}",
+    "_extensions": [
+        "jinja2.ext.do"
+    ]
 }
