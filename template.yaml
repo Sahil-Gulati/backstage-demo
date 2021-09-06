@@ -3,8 +3,8 @@ kind: Template
 # some metadata about the template itself
 metadata:
   name: ServicePackageTemplate
-  title: Test Action template
-  description: scaffolder v1beta2 template demo
+  title: Service package template
+  description: Service package template from go-platform-shared-templates
 spec:
   owner: backstage/techdocs-core
   type: service
@@ -47,7 +47,6 @@ spec:
       action: fetch:template
       input:
         url: ./template
-        #url: https://github.com/gelatoas/go-platform-shared-templates/tree/master/service-template/
         values:
           service_name: "{{ parameters.name }}"
           need_database: "{{ parameters.component }}"
