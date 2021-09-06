@@ -2,7 +2,7 @@ apiVersion: backstage.io/v1beta2
 kind: Template
 # some metadata about the template itself
 metadata:
-  name: v1beta2-demo
+  name: Service Template
   title: Test Action template
   description: scaffolder v1beta2 template demo
 spec:
@@ -11,31 +11,23 @@ spec:
 
   # these are the steps which are rendered in the frontend with the form input
   parameters:
-  
-    - title: Fill in some steps
+    - title: Details of the go service package
       required:
         - name
+        - need_database
       properties:
         name:
           title: Name
           type: string
-          description: Unique name of the component
-          ui:autofocus: true
-          ui:options:
-            rows: 5
-            
-    - title: Name of the component
-      required:
-        - component
-      properties:
-        component:
-          title: Component
+          description: Name of the service
+        need_database:
+          title: Is database needed?
           type: string
-          description: Unique name of the component
-          ui:autofocus: true
-          ui:options:
-            rows: 5
-            
+          enum:
+            - "y"
+            - "n"
+          description: Need of the database
+
     - title: Choose a location
       required:
         - repoUrl
@@ -54,19 +46,30 @@ spec:
       name: Fetch Base
       action: fetch:template
       input:
-        file: ./template
+        url: ./template
+        #url: https://github.com/gelatoas/go-platform-shared-templates/tree/master/service-template/
         values:
-          name: '{{ parameters.name }}'
-          component: '{{ parameters.component }}'
+          service_name: "{{ parameters.name }}"
+          need_database: "{{ parameters.component }}"
+          repo_full_path: "{{ parameters.repoUrl }}"
+          repo_base_path: "github.com/gelatoas"
+          repo_name: "{{ parameters.name }}"
+          ecr_repo_name: "{{ parameters.name }}"
+          helm_chart_name: "{{ parameters.name }}"
+          helm_chart_pgp_name: "{{ parameters.name }}"
+          helm_chart_pgp_key: "TBD"
+          sentry_dsn: "TBD"
+          sonar_project_key: "TBD"
+          newrelic_key: "TBD"
+          kubernetes_namespace: "TBD"
     - id: publish
       name: Publish
       action: publish:github
       input:
-        allowedHosts: ['github.com']
-        description: 'This is {{ parameters.name }}'
-        repoUrl: '{{ parameters.repoUrl }}'
+        allowedHosts: ["github.com"]
+        description: "This is {{ parameters.name }}"
+        repoUrl: "{{ parameters.repoUrl }}"
 
   output:
-    remoteUrl: '{{ steps.publish.output.remoteUrl }}'
-    entityRef: '{{ steps.register.output.entityRef }}'
-
+    remoteUrl: "{{ steps.publish.output.remoteUrl }}"
+    entityRef: "{{ steps.register.output.entityRef }}"
