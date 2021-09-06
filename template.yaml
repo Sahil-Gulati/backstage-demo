@@ -54,7 +54,7 @@ spec:
       name: Fetch Base
       action: fetch:template
       input:
-        url: https://github.com/Sahil-Gulati/backstage-demo/tree/main/template
+        file: ./template
         values:
           name: '{{ parameters.name }}'
           component: '{{ parameters.component }}'
