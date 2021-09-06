@@ -47,6 +47,7 @@ spec:
       action: fetch:template
       input:
         url: ./template
+        cookiecutterCompat: true
         values:
           service_name: "{{ parameters.name }}"
           need_database: "{{ parameters.component }}"
