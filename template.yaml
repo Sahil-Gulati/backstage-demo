@@ -50,6 +50,7 @@ spec:
         cookiecutterCompat: true
         values:
           service_name: "{{ parameters.name }}"
+          snake_case: "{{ parameters.service_name|replace('-', '_') }}",
           need_database: "{{ parameters.need_database }}"
           repo_full_path: "{{ parameters.repoUrl }}"
           repo_base_path: "github.com/gelatoas"
