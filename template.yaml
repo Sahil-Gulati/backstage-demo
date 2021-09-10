@@ -51,7 +51,7 @@ spec:
         values:
           service_name: "{{ parameters.name }}"
           service_name_snake_case: "{{ replace parameters.name '-' '_' }}"
-          service_name_pascalcase: "{{ replace (title (replace parameters.name '-' ' ' ) ' ' '') }}"
+          service_name_pascalcase: "{{ replace title (replace parameters.name '-' ' ' ) ' ' '' }}"
           need_database: "{{ parameters.need_database }}"
           repo_full_path: "{{ parameters.repoUrl }}"
           repo_base_path: "github.com/gelatoas"
