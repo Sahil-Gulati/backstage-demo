@@ -1,6 +1,6 @@
 #!/bin/bash
 
 echo "Hello World";
-echo "values.name {{ cookiecutter.service_name }}"
-echo "hello {{ cookiecutter.snake_case }}"
-echo "hello {{ cookiecutter.service_name|replace('-', '_') }}"
+echo "Normal {{ cookiecutter.service_name }}"
+echo "Snake case {{ cookiecutter.service_name_snake_case }}"
+echo "Pascal case {{ cookiecutter.service_name_pascalcase }}"
