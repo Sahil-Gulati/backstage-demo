@@ -16,6 +16,21 @@ spec:
         - name
         - need_database
       properties:
+        name1:
+          title: Name
+          type: string
+          description: Unique name of the component
+          ui:autofocus: true
+          ui:options:
+            rows: 5
+        owner:
+          title: Owner
+          type: string
+          description: Owner of the component
+          ui:field: OwnerPicker
+          ui:options:
+            allowedKinds:
+              - Group
         name:
           title: Name
           type: string
@@ -46,8 +61,7 @@ spec:
       name: Fetch Base
       action: fetch:cookiecutter
       input:
-        url: ./template
-        cookiecutterCompat: true
+        url: https://github.com/gelatoas/go-platform-shared-templates/tree/master/service-template
         values:
           service_name: "{{ parameters.name }}"
           service_name_snake_case: "\\{{ cookiecutter.service_name|replace('-', '_') }}"
