@@ -33,7 +33,7 @@ spec:
               const: "n"
 
     # Details/information of the services
-    - title: Details of the services need for the component creation
+    - title: Information of the services/modules
       required:
         - helm_chart_pgp_key
         - sentry_dsn
