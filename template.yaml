@@ -25,10 +25,13 @@ spec:
         need_database:
           title: Is database required?
           type: string
-          enum:
-            - "y"
-            - "n"
-          
+          ui:widget: radio
+          oneOf:
+            - title: Yes
+              const: "y"
+            - title: No
+              const: "n"
+              
     - title: Details of the services need for the component creation
       required:
         - helm_chart_pgp_key
