@@ -16,25 +16,13 @@ spec:
         - name
         - need_database
       properties:
-        name1:
-          title: Name
-          type: string
-          description: Unique name of the component
-          ui:autofocus: true
-          ui:options:
-            rows: 5
-        owner:
-          title: Owner
-          type: string
-          description: Owner of the component
-          ui:field: OwnerPicker
-          ui:options:
-            allowedKinds:
-              - Group
         name:
           title: Name
           type: string
           description: Name of the service
+          ui:autofocus: true
+          ui:options:
+            rows: 5
         need_database:
           title: Is database needed?
           type: string
@@ -42,6 +30,29 @@ spec:
             - "y"
             - "n"
           description: Need of the database
+    - title: Details of the services
+      required:
+        - helm_chart_pgp_key
+        - sentry_dsn
+        - sonar_project_key
+        - newrelic_key
+        - kubernetes_namespace
+      properties:
+        helm_chart_pgp_key:
+          title: PGP Key for the helm chart
+          type: string
+        sentry_dsn:
+          title: Sentry DSN
+          type: string
+        sonar_project_key:
+          title: Sonar project key
+          type: string
+        newrelic_key:
+          title: NewRelic key
+          type: string
+        kubernetes_namespace:
+          title: Kubernetes namespace
+          type: string
 
     - title: Choose a location
       required:
