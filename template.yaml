@@ -17,21 +17,19 @@ spec:
         - need_database
       properties:
         name:
-          title: Name
+          title: Unique name of the service/component
           type: string
-          description: Unique name of the service/component
           ui:autofocus: true
           ui:options:
             rows: 5
         need_database:
-          title: Database
+          title: Is database required?
           type: string
           enum:
             - "y"
             - "n"
-          description: Is database needed?
           
-    - title: Details of the services
+    - title: Details of the services need for the component creation
       required:
         - helm_chart_pgp_key
         - sentry_dsn
@@ -42,6 +40,7 @@ spec:
         helm_chart_pgp_key:
           title: PGP Key for the helm chart
           type: string
+          ui:autofocus: true
         sentry_dsn:
           title: Sentry DSN
           type: string
