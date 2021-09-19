@@ -6,11 +6,11 @@ metadata:
   title: Service package template
   description: Service package template from go-platform-shared-templates
 spec:
-  owner: backstage/techdocs-core
-  type: service
+  owner: delivery-platform
+  type: template
 
-  # these are the steps which are rendered in the frontend with the form input
   parameters:
+    # Basic information of the component
     - title: Details of the go service package
       required:
         - name
@@ -31,7 +31,8 @@ spec:
               const: "y"
             - title: No
               const: "n"
-              
+
+    # Details/information of the services
     - title: Details of the services need for the component creation
       required:
         - helm_chart_pgp_key
@@ -57,7 +58,7 @@ spec:
           title: Kubernetes namespace
           type: string
 
-    - title: Choose a location
+    - title: Details of the repository
       required:
         - repoUrl
       properties:
