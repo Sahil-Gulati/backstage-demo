@@ -19,17 +19,18 @@ spec:
         name:
           title: Name
           type: string
-          description: Name of the service
+          description: Unique name of the service/component
           ui:autofocus: true
           ui:options:
             rows: 5
         need_database:
-          title: Is database needed?
+          title: Database
           type: string
           enum:
             - "y"
             - "n"
-          description: Need of the database
+          description: Is database needed?
+          
     - title: Details of the services
       required:
         - helm_chart_pgp_key
